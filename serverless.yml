@@ -1,0 +1,49 @@
+
+
+service: new-project
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  
+  vpc: 
+    securityGroupIds:
+      - sg-02d61145408f43b19
+    subnetIds:
+      - subnet-02af08276732a4730
+      - subnet-059db36f16889e5a0
+      - subnet-0208d5dbcce88fe19
+      - subnet-06575f84073685f71
+      - subnet-0567852367a5f28b0
+      - subnet-03f16c5a84d74f141
+
+functions:  
+  getFilms:
+    handler: src/films/list.getFilms
+    events:
+      - httpApi:
+          path: /api/v1/films
+          method: get
+
+  getPeople:
+    handler: src/people/list.getPeople
+    events:
+      - http:
+          path: api/v1/people
+          method: get
+  
+  createPlanet:
+    handler: src/planets/create.createPlanet
+    events:
+      - httpApi:
+          path: /api/v1/planet
+          method: post
+  
+  testConnection:
+    handler: src/testconnection.testConnection
+    events:
+      - httpApi:
+          path: /api/v1/testconnection
+          method: get

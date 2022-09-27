@@ -1,0 +1,17 @@
+{
+  "name": "new-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^26.6.3",
+    "mysql": "^2.18.1",
+    "node-fetch": "^2.6.1"
+  }
+}
