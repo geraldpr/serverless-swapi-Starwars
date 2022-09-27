@@ -4,10 +4,10 @@ const mysql = require('mysql');
 const configDB = {
     connectionLimit: 20,
     host: 'rds-curso.c8kmlmcndrgl.us-east-1.rds.amazonaws.com',
-    user: 'git',
+    user: 'Curso',
     password: 'serverless',
     port: '3306',
-    database: '',
+    database: 'RDSCurso',
     debug: true
 };
 
